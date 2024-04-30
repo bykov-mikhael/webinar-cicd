@@ -1,0 +1,8 @@
+{
+  "vcpkg.target.defaultTriplet": "-linux",
+  "vcpkg.target.hostTriplet": "-linux",
+  "vcpkg.target.useStaticLib": false,
+  "cmake.configureArgs": [
+    "-DVCPKG_TARGET_TRIPLET=-linux"
+  ]
+}
