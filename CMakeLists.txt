@@ -7,6 +7,8 @@ project(helloworld VERSION ${PROJECT_VESRION})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
+find_package(GTest REQUIRED)
+
 configure_file(version.h.in version.h)
 
 add_executable(helloworld_cli main.cpp)
@@ -30,6 +32,7 @@ target_link_libraries(helloworld_cli PRIVATE
 )
 target_link_libraries(test_version
     ${Boost_LIBRARIES}
+    GTest::gtest GTest::gtest_main
     helloworld
 )
 
@@ -70,3 +73,5 @@ include(CPack)
 enable_testing()
 
 add_test(test_version test_version)
+
+add_test(TestVesrion test_version)
