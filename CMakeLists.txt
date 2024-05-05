@@ -33,7 +33,7 @@ target_link_libraries(test_version
     helloworld
 )
 
-if (MSVC)
+if(MSVC)
     target_compile_options(helloworld_cli PRIVATE
         /W4
     )
@@ -43,7 +43,7 @@ if (MSVC)
     target_compile_options(test_version PRIVATE
         /W4
     )
-else ()
+else()
     target_compile_options(helloworld_cli PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
@@ -54,8 +54,6 @@ else ()
         -Wall -Wextra -pedantic -Werror
     )
 endif()
-
-
 
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
 
